@@ -16,7 +16,7 @@ const missing_image_url = "https://tinyurl.com/missing-tv";
 async function getShowsByTerm(term) {
   // ADD: Remove placeholder & make request to TVMaze search shows API.
   //AJAZ request to search TVMAze API
-  let response = await axios.get("https:/api.tvmaze.com/search/shows", {
+  let response = await axios.get("https://api.tvmaze.com/search/shows", {
     params: { q: term },
   });
 
@@ -80,7 +80,7 @@ $searchForm.on("submit", async function (e) {
 });
 
 async function getEpisodesOfShow(id) {
-  let response = await axios.get(`https:api.tvmaze.com/shows/${id}/episodes`);
+  let response = await axios.get(`https://api.tvmaze.com/shows/${id}/episodes`);
 
   return response.data.map((e) => ({
     id: e.id,
